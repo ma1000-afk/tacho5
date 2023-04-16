@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.pum.tachograph.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_insertFragment"
+            app:destination="@id/insertFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_oneMinuteFragment"
+            app:destination="@id/oneMinuteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetail"
+        android:name="com.pum.tachograph.UserDetail"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail" />
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.pum.tachograph.UserListFragment"
+        android:label="fragment_user_list"
+        tools:layout="@layout/fragment_user_list" >
+        <action
+            android:id="@+id/action_userListFragment_to_userDetail"
+            app:destination="@id/userDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertFragment"
+        android:name="com.pum.tachograph.InsertFragment"
+        android:label="fragment_insert"
+        tools:layout="@layout/fragment_insert" >
+        <action
+            android:id="@+id/action_insertFragment_to_DBULFragment"
+            app:destination="@id/DBULFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DBULFragment"
+        android:name="com.pum.tachograph.DBULFragment"
+        android:label="DBULFragment" >
+        <action
+            android:id="@+id/action_DBULFragment_to_userDetail"
+            app:destination="@id/userDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.pum.tachograph.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/oneMinuteFragment"
+        android:name="com.pum.tachograph.OneMinuteFragment"
+        android:label="fragment_one_minute"
+        tools:layout="@layout/fragment_one_minute" >
+        <action
+            android:id="@+id/action_oneMinuteFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+</navigation>
